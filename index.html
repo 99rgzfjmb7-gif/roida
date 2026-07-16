@@ -7,40 +7,42 @@
 
 <style>
 body{
-margin:0;
-padding:0;
-background:linear-gradient(135deg,#ff9a9e,#fad0c4);
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-font-family:Arial;
-text-align:center;
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+    font-family:Arial,sans-serif;
+    text-align:center;
 }
 
 .box{
-background:white;
-padding:30px;
-border-radius:20px;
-box-shadow:0 0 20px rgba(0,0,0,.2);
-width:85%;
-max-width:400px;
+    background:#fff;
+    padding:30px;
+    border-radius:20px;
+    width:85%;
+    max-width:420px;
+    box-shadow:0 0 20px rgba(0,0,0,.2);
+}
+
+h1{
+    color:#ff4081;
 }
 
 #countdown{
-font-size:40px;
-color:#ff4d88;
-font-weight:bold;
-margin:20px 0;
+    font-size:55px;
+    font-weight:bold;
+    color:#ff4081;
+    margin:20px 0;
 }
 
 #message{
-margin-top:20px;
-font-size:20px;
-color:#444;
+    font-size:20px;
+    color:#444;
+    line-height:1.8;
 }
 </style>
-
 </head>
 
 <body>
@@ -49,7 +51,7 @@ color:#444;
 
 <h1>💖 مفاجأة لرويدا 💖</h1>
 
-<p>المفاجأة ستظهر بعد:</p>
+<p>باقي على المفاجأة...</p>
 
 <div id="countdown">20</div>
 
@@ -59,22 +61,22 @@ color:#444;
 
 <script>
 
-let seconds = 20;
+let time = 20;
 
-const timer = setInterval(function(){
+let timer = setInterval(function(){
 
-document.getElementById("countdown").innerHTML = seconds + " ثانية";
+document.getElementById("countdown").innerHTML = time;
 
-seconds--;
+time--;
 
-if(seconds < 0){
+if(time < 0){
 
 clearInterval(timer);
 
-document.getElementById("countdown").innerHTML = "🎉";
+document.getElementById("countdown").innerHTML="🎉";
 
-document.getElementById("message").innerHTML =
-"🌹 صباح الخير يا رويدا ❤️<br><br>أردت أن أكون أول شخص يرسم الابتسامة على وجهك اليوم.<br><br>أتمنى أن يكون يومك جميلًا بقدر جمال قلبك. 🤍";
+document.getElementById("message").innerHTML=
+"🌹 صباح الخير يا رويدا ❤️<br><br>أتمنى يكون يومك جميل مثل ابتسامتك.<br><br>أحبك أكثر مما تتخيلين. 🤍";
 
 }
 
