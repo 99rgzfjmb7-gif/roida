@@ -27,14 +27,11 @@ width:85%;
 max-width:400px;
 }
 
-button{
-background:#ff4d88;
-color:white;
-border:none;
-padding:15px 25px;
-font-size:18px;
-border-radius:12px;
-cursor:pointer;
+#countdown{
+font-size:40px;
+color:#ff4d88;
+font-weight:bold;
+margin:20px 0;
 }
 
 #message{
@@ -52,11 +49,9 @@ color:#444;
 
 <h1>💖 مفاجأة لرويدا 💖</h1>
 
-<p>اضغطي الزر لتبدأ المفاجأة</p>
+<p>المفاجأة ستظهر بعد:</p>
 
-<button onclick="love()">
-ابدئي ❤️
-</button>
+<div id="countdown">20</div>
 
 <div id="message"></div>
 
@@ -64,13 +59,26 @@ color:#444;
 
 <script>
 
-function love(){
+let seconds = 20;
 
-document.getElementById("message").innerHTML=
+const timer = setInterval(function(){
 
-"🌹 صباح الخير يا رويدا ❤️ <br><br>أردت أن أكون أول شخص يرسم الابتسامة على وجهك اليوم.<br><br>أتمنى أن يكون يومك جميلًا بقدر جمال قلبك. 🤍";
+document.getElementById("countdown").innerHTML = seconds + " ثانية";
+
+seconds--;
+
+if(seconds < 0){
+
+clearInterval(timer);
+
+document.getElementById("countdown").innerHTML = "🎉";
+
+document.getElementById("message").innerHTML =
+"🌹 صباح الخير يا رويدا ❤️<br><br>أردت أن أكون أول شخص يرسم الابتسامة على وجهك اليوم.<br><br>أتمنى أن يكون يومك جميلًا بقدر جمال قلبك. 🤍";
 
 }
+
+},1000);
 
 </script>
 
